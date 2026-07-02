@@ -5,6 +5,7 @@ return [
     'min_experience_years' => env('ETEEAP_MIN_EXPERIENCE_YEARS', 5),
     'adviser_max_students' => env('ETEEAP_ADVISER_MAX_STUDENTS', 3),
     'student_max_subjects' => env('ETEEAP_STUDENT_MAX_SUBJECTS', 3),
+    'id_format' => env('ETEEAP_STUDENT_ID_FORMAT', 'ETEEAP-{YEAR}-{NUMBER}'),
     'panel_min_assessors' => env('ETEEAP_PANEL_MIN_ASSESSORS', 3),
 
     'document' => [
@@ -38,4 +39,58 @@ return [
         ['key' => 'other_evidence_2', 'label' => 'Other Evidence of BSIT Capability (2)', 'required' => false],
         ['key' => 'other_evidence_3', 'label' => 'Other Evidence of BSIT Capability (3)', 'required' => false],
     ],
+    'curriculum' => [
+        'default_version' => env('ETEEAP_CURRICULUM_VERSION', 'CMO-54-2016'),
+    ],
+
+    'registry_number_format' => env('ETEEAP_REGISTRY_NUMBER_FORMAT', 'RGN-{YEAR}-{NUMBER}'),
+
+    /**
+     * The 12 clearance document types tracked on every graduation clearance.
+     */
+    'clearance_documents' => [
+        ['key' => 'endorsement_letter', 'label' => 'Endorsement Letter'],
+        ['key' => 'rubric_final_rating', 'label' => 'Rubric for Final Rating'],
+        ['key' => 'summary_requirements', 'label' => 'Summary of Requirements'],
+        ['key' => 'enrollment_form', 'label' => 'Enrollment Form'],
+        ['key' => 'equivalency_matrix_compliance', 'label' => 'Equivalency Matrix & Compliance'],
+        ['key' => 'panel_evaluation', 'label' => 'Panel Evaluation'],
+        ['key' => 'application_letter', 'label' => 'Application Letter'],
+        ['key' => 'ched_form', 'label' => 'CHED Form'],
+        ['key' => 'cv', 'label' => 'Curriculum Vitae'],
+        ['key' => 'psa_documents', 'label' => 'PSA Documents'],
+        ['key' => 'coe', 'label' => 'Certificate of Employment'],
+        ['key' => 'narrative_reports', 'label' => 'Narrative Reports'],
+    ],
+
+    'reports' => [
+        'pipeline' => 'Pipeline Report',
+        'equivalency_distribution' => 'Equivalency Distribution Report',
+        'adviser_load' => 'Adviser Load Report',
+        'enhancement_progress' => 'Enhancement Progress Report',
+        'graduation_audit' => 'Graduation Audit Report',
+        'timeline_analysis' => 'Timeline Analysis Report',
+        'ched_compliance' => 'CHED Compliance Report',
+    ],
+
+    'templates' => [
+        'ched_form' => 'CHED-ETEEAP-Form.pdf',
+        'enrollment_form' => 'Enrollment-Form.pdf',
+        'clearance_form' => 'Clearance-Form.pdf',
+    ],
+
+    'enhancement' => [
+        'activity_types' => [
+            ['key' => 'modular_study', 'label' => 'Modular Study'],
+            ['key' => 'case_analysis', 'label' => 'Case Analysis'],
+            ['key' => 'research', 'label' => 'Research Activity'],
+            ['key' => 'video_presentation', 'label' => 'Video Presentation'],
+            ['key' => 'webinar', 'label' => 'Webinar Attendance'],
+            ['key' => 'skills_demo', 'label' => 'Skills Demonstration'],
+            ['key' => 'reporting', 'label' => 'Reporting'],
+        ],
+    ],
+
+    'retention_years' => env('ETEEAP_RETENTION_YEARS', 5),
+    'inactive_purge_months' => env('ETEEAP_INACTIVE_PURGE_MONTHS', 12),
 ];
