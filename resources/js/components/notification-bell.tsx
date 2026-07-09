@@ -46,7 +46,7 @@ export function NotificationBell() {
                     )}
                 </div>
                 <DropdownMenuSeparator />
-                {recentNotifications === null ? (
+                {!recentNotifications ? (
                     <div className="px-2 py-4 text-center text-sm text-muted-foreground">
                         <div className="mx-auto mb-2 size-4 animate-pulse rounded bg-muted" />
                         Loading...

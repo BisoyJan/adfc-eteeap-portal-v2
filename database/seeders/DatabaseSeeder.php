@@ -21,18 +21,5 @@ class DatabaseSeeder extends Seeder
             AdminUserSeeder::class,
             CurriculumSeeder::class,
         ]);
-
-        // User::factory(10)->create();
-
-        $testUser = User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        $applicantRole = Role::where('name', 'applicant')->first();
-
-        if ($applicantRole) {
-            $testUser->roles()->syncWithoutDetaching([$applicantRole->id]);
-        }
     }
 }
